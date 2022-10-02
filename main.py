@@ -36,11 +36,11 @@
 # print(to_dict(source))
 
 # Task 2
-def biggest_dict(update_dict, **kwargs):
-    update_dict.update(kwargs)
+def biggest_dict(**kwargs):
+    my_dic.update(kwargs)
 
 
 my_dic = {'fist_one': "we can do it"}
-biggest_dict(my_dic, second='we did it', third='we did it again')
+biggest_dict(second='we did it', third='we did it again')
 
 print(my_dic)
