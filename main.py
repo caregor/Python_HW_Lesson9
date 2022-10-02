@@ -20,3 +20,16 @@ thesaurus_adv(), принимающую в качестве аргументов
      "И": { "И": ["Илья Иванов"] },
  "С": { "И": ["Иван Сергеев", "Инна Серова"], "А": ["Анна Савельева"] } }
 """
+
+
+# Task 1
+def to_dict(lst):
+    result = {}
+    for item in lst:
+        result[item] = item
+    return result
+
+
+source = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+print(to_dict(source))
