@@ -17,9 +17,10 @@
 задания и содержащие записи, в которых фамилия начинается с соответствующей буквы.
  Например:
  >>> thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева")
- { "А": { "П": ["Петр Алексеев"] },
-     "И": { "И": ["Илья Иванов"] },
- "С": { "И": ["Иван Сергеев", "Инна Серова"], "А": ["Анна Савельева"] } }
+ {  "А": { "П": ["Петр Алексеев"] },
+    "И": { "И": ["Илья Иванов"] },
+    "С": { "И": ["Иван Сергеев", "Инна Серова"], "А": ["Анна Савельева"] }
+ }
 """
 
 
@@ -36,11 +37,33 @@
 # print(to_dict(source))
 
 # Task 2
-def biggest_dict(**kwargs):
-    my_dic.update(kwargs)
+# def biggest_dict(**kwargs):
+#     my_dic.update(kwargs)
+#
+#
+# my_dic = {'fist_one': "we can do it"}
+# biggest_dict(second='we did it', third='we did it again')
+#
+# print(my_dic)
 
-
-my_dic = {'fist_one': "we can do it"}
-biggest_dict(second='we did it', third='we did it again')
-
-print(my_dic)
+# Task 3
+# def count_it(sequence):
+#     seq_list = list(sequence)
+#     result = {}
+#     answer_dic = {}
+#     for item in seq_list:
+#         cnt = seq_list.count(item)
+#         result[int(item)] = cnt
+#
+#     for _ in range(3):
+#         max_val = max(result.values())
+#         final_dict = {k: v for k, v in result.items() if v == max_val}
+#         answer_dic.update(final_dict)
+#         tmp = final_dict.keys()
+#         tnp_int = list(tmp)
+#         result.pop(tnp_int[0])
+#     return answer_dic
+#
+#
+# raw = '0000111223456789'
+# print(count_it(raw))
