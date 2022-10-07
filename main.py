@@ -67,3 +67,38 @@
 #
 # raw = '0000111223456789'
 # print(count_it(raw))
+
+# Task 4
+
+def thesaurus_adv(*args):
+    dict_by_name = {}
+    dict_by_last_name = {}
+    save_list = []
+    i = 0
+    for item in args:
+        i += 1
+        tmp_list = item.split()
+        key_by_last_name = tmp_list[1][0][0]
+        key_by_name = tmp_list[0][0][0]
+        if key_by_last_name not in dict_by_last_name.keys():
+            dict_by_name[key_by_name] = item
+            dict_by_last_name[key_by_last_name] = dict_by_name
+            dict_by_name = {}
+        else:
+            if key_by_name in dict_by_name.keys() or key_by_name == previous_key_by_name:
+                save_list.append(item)
+                save_list.append(previous_item)
+                dict_by_name[key_by_name] = save_list
+                dict_by_last_name[key_by_last_name] = dict_by_name
+                dict_by_name = {}
+            else:
+                tmp_dict = dict_by_last_name[key_by_last_name]
+                tmp_dict[key_by_name] = item
+                dict_by_last_name[key_by_last_name] = tmp_dict
+        previous_key_by_name = key_by_name
+        previous_item = item
+
+        save_list = []
+    print(dict_by_last_name)
+
+thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева")
